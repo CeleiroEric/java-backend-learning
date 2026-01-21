@@ -1,9 +1,8 @@
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Sistema sistema = new Sistema();
-
+        cargarDatosIniciales(sistema);
         int opcion = 0;
         System.out.println("¡Bienvenido!");
         while(opcion!=3){
@@ -16,7 +15,7 @@ public class Main {
             switch(opcion){
                 case 1:
                     String nombre = InputUtil.leerString("Introduzca el nombre del usuario: ");
-                    String email = InputUtil.leerString("Introduzca el email del usuario: ");
+                    String email = InputUtil.leerEmail("Introduzca el email del usuario: ");
                     Usuario usuario = new Usuario(nombre, email);
                     sistema.agregarUsuario(usuario);
                     System.out.println("¡El usuario ha sido creado correctamente!");
@@ -27,5 +26,9 @@ public class Main {
                     break;
             }
         }
+        }
+        public static void cargarDatosIniciales(Sistema sistema){
+            Usuario usuario1 = new Usuario("Eric","celeiroericwork@gmail.com");
+            sistema.agregarUsuario(usuario1);
         }
     }
