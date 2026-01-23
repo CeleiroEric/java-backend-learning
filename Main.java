@@ -11,11 +11,10 @@ public class Main {
             System.out.println("3.Salir del programa");
             opcion = InputUtil.leerInt("Elija una opcion: ",1,3);
 
-
             switch(opcion){
                 case 1:
                     String nombre = InputUtil.leerString("Introduzca el nombre del usuario: ");
-                    String email = InputUtil.leerEmail("Introduzca el email del usuario: ");
+                    String email = InputUtil.leerEmailUnico("Introduzca el email del usuario: ",sistema);
                     Usuario usuario = new Usuario(nombre, email);
                     sistema.agregarUsuario(usuario);
                     System.out.println("¡El usuario ha sido creado correctamente!");
@@ -26,9 +25,13 @@ public class Main {
                     break;
             }
         }
-        }
-        public static void cargarDatosIniciales(Sistema sistema){
-            Usuario usuario1 = new Usuario("Eric","celeiroericwork@gmail.com");
-            sistema.agregarUsuario(usuario1);
-        }
     }
+    public static void cargarDatosIniciales(Sistema sistema){
+        Usuario usuario1 = new Usuario("Eric","celeiroericwork@gmail.com");
+        Usuario usuario2 = new Usuario("Celeiro","celeiro@gmail.com");
+        Usuario usuario3 = new Usuario("Garrido","garrido@gmail.com");
+        sistema.agregarUsuario(usuario1);
+        sistema.agregarUsuario(usuario2);
+        sistema.agregarUsuario(usuario3);
+    }
+}

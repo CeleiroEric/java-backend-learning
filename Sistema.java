@@ -10,9 +10,24 @@ public class Sistema {
     public void agregarUsuario(Usuario usuario){
         usuarios.add(usuario);
     }
+
+    public boolean emailRepetido(String email){
+        for(Usuario usuario:usuarios){
+            if(usuario.getEmail().equalsIgnoreCase(email)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+
+
     public void listarUsuarios(){
+        int contador=1;
         for(Usuario usuario : usuarios){
-            System.out.println(usuario);
+            System.out.println(contador +"." + usuario);
+            contador++;
         }
     }
 }

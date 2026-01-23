@@ -6,5 +6,9 @@ public class Usuario {
         this.nombre=nombre;
         this.email=email;
     }
-    public String toString(){return "Usuario con nombre " + nombre + " y email " + email + "."; }
+
+    public String getEmail(){
+        return email;
+    }
+    public String toString(){return nombre + " / " +  email + "."; }
 }

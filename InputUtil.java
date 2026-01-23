@@ -48,6 +48,19 @@ public class InputUtil {
         }
         return email;
     }
+
+    public static String leerEmailUnico(String mensaje, Sistema sistema){
+        String email;
+        while(true){
+            email = leerEmail(mensaje);
+            if (sistema.emailRepetido(email)) {
+                System.out.println("El email ya esta registrado, introduzca otro por favor: ");
+            }else{
+                break;
+            }
+        }
+        return email;
+    }
 }
 
 
