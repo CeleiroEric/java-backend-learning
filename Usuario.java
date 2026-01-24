@@ -6,7 +6,6 @@ public class Usuario {
         this.nombre=nombre;
         this.email=email;
     }
-
     public String getEmail(){
         return email;
     }

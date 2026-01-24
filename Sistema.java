@@ -20,9 +20,6 @@ public class Sistema {
         return false;
     }
 
-
-
-
     public void listarUsuarios(){
         int contador=1;
         for(Usuario usuario : usuarios){
