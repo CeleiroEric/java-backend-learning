@@ -27,4 +27,22 @@ public class Sistema {
             contador++;
         }
     }
+
+    public void filtrarUsuarios(){
+        System.out.println("Opciones:");
+        System.out.println("1.Filtrar por letra");
+        System.out.println("2.Filtrar por dominio de email");
+        int opcion = InputUtil.leerInt("Introduzca una opcion",1,2);
+
+        if(opcion==1){
+            String letra = InputUtil.leerString("Introduzca la letra por la que comienza el usuario");
+            List<Usuario> usuariosFiltrados = usuarios.stream().filter(usuario -> usuario.getNombre().toUpperCase().startsWith(letra.toUpperCase())).toList();
+            usuariosFiltrados.forEach(System.out::println);
+        }
+        if(opcion==2){
+            String dominio = InputUtil.leerString("Introduzca un dominio (Ejemplo: '@gmail')");
+            List<Usuario> emailsFiltrados = usuarios.stream().filter(usuario -> usuario.getEmail().contains(dominio)).toList();
+            emailsFiltrados.forEach(System.out::println);
+        }
+    }
 }

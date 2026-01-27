@@ -7,6 +7,7 @@ Pequeña aplicación de consola desarrollada en Java que permite gestionar usuar
     - Formato básico correcto
     - Email único (no se permiten duplicados)
 - Listar usuarios registrados de forma numerada
+- Filtrar usuarios 
 - Menú interactivo con control de errores
 
 ## Estructura del proyecto

@@ -9,5 +9,8 @@ public class Usuario {
     public String getEmail(){
         return email;
     }
+
+    public String getNombre() { return nombre; }
+
     public String toString(){return nombre + " / " +  email + "."; }
 }
